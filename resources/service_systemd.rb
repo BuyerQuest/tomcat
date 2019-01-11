@@ -27,7 +27,7 @@ property :instance_name, String, name_property: true
 property :install_path, String
 property :tomcat_user, String, default: lazy { |r| "tomcat_#{r.instance_name}" }
 property :tomcat_group, String, default: lazy { |r| "tomcat_#{r.instance_name}" }
-property :working_directory, String, default: lazy { |r| "tomcat_#{r.install_path}" }
+property :working_directory, String, default: lazy { |r| "#{r.install_path}" }
 property :env_vars, Array, default: [
   { 'CATALINA_PID' => '$CATALINA_BASE/bin/tomcat.pid' },
 ]
