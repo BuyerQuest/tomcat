@@ -93,7 +93,7 @@ action_class do
         env_vars: envs_with_catalina_base,
         install_path: derived_install_path,
         working_directory: new_resource.working_directory,
-        additional_params: ew_resource.additional_params,
+        additional_params: new_resource.additional_params,
         user: new_resource.tomcat_user,
         group: new_resource.tomcat_group
       )
