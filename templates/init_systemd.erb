@@ -18,10 +18,16 @@ ExecStop=<%= @install_path %>/bin/catalina.sh stop
 SuccessExitStatus=0 143
 Restart=on-failure
 RestartSec=2
+<% if @working_directory %>
 WorkingDirectory=<%= @working_directory %>
+<% end %>
 
 User=<%= @user %>
 Group=<%= @group %>
+
+<% @additional_params.each do |param_name, param_value| %>
+<%= param_name %>=<%=param_value %>
+<% end %>
 
 [Install]
 WantedBy=multi-user.target
